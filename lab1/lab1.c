@@ -16,6 +16,11 @@ struct Grid* left;
 int down_n, right_n;
 }Grid;
 
+void ASSERT_EQ(float a, float b){
+	if(a!=b) printf("Invalid Result\n");
+	else printf("Correct Result\n");
+}
+
 Grid** InitOrderedGrid(int h, int w){
 	Grid** p = NULL;
 	if ((h <2) || (w < 2)) {
@@ -294,7 +299,8 @@ void TestFindShortestPath_FixedPath_ReturnTwentyTwo(){
 	int** l = FindShortestPath(path,&r,h,w);
 
 	//assrt
-	printf("TestFindShortestPath_FixedPath_ReturnTwentyTwo(): %d\n",r);
+	printf("TestFindShortestPath_FixedPath_ReturnTwentyTwo(): ");
+	ASSERT_EQ(r,22);
 }
 void TestFindShortestPath_FixedPath_ReturnFour(){
 	//arrange
@@ -315,7 +321,8 @@ void TestFindShortestPath_FixedPath_ReturnFour(){
 	int** l = FindShortestPath(path,&r,h,w);
 
 	//assrt
-	printf("TestFindShortestPath_FixedPath_ReturnFour(): %d\n",r);
+	printf("TestFindShortestPath_FixedPath_ReturnFour(): ");
+	ASSERT_EQ(r, 4);
 }
 void TestFindShortestPath_FixedPath_ReturnFourtyNine(){
 	//arrange
@@ -336,7 +343,8 @@ void TestFindShortestPath_FixedPath_ReturnFourtyNine(){
 	int** l = FindShortestPath(path,&r,h,w);
 
 	//assrt
-	printf("TestFindShortestPath_FixedPath_ReturnFourtyNine(): %d\n",r);
+	printf("TestFindShortestPath_FixedPath_ReturnFourtyNine(): ");
+	ASSERT_EQ(r, 49);
 }
 void TestFindShortestPath_FixedPath_ReturnFifty(){
 	//arrange
@@ -357,7 +365,8 @@ void TestFindShortestPath_FixedPath_ReturnFifty(){
 	int** l = FindShortestPath(path,&r,h,w);
 
 	//assert
-	printf("TestFindShortestPath_FixedPath_ReturnFifty(): %d\n",r);
+	printf("TestFindShortestPath_FixedPath_ReturnFifty(): ");
+	ASSERT_EQ(r, 50);
 }
 void TestPrintShortestPath_IncorrectHorW_IncorrectGridError(){
 	//arrange
